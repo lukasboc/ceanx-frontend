@@ -1,5 +1,5 @@
 <template>
-  <div class="pt-24 container mx-auto">
+  <div class="pt-24 container mx-auto min-h-screen">
     <div class="pt-8 grid grid-cols-2 sm:grid-cols-2 gap-4 ">
     <h1 class="text-2xl font-bold mb-4">Kostenschätzungen</h1>
     <span class="text-right"><router-link :to="{ name: 'NewCostEstimation' }" class="btn btn-primary">Neue Kostenschätzung</router-link></span>
