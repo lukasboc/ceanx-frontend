@@ -8,14 +8,15 @@ This template should help get you started developing with Vue 3 in Vite. The tem
 - oder [VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=johnsoncodehk.volar)
 ##Lokales setup
 
+- .env aus `.env.example` erstellen
 - packages mit `npm install` installieren
 - lokal starten mit `npm run dev`
 
 ### Customize BASE_URL
 Die Base URL für das Backend und das Frontend können in der .env gesetzt werden.
 ```
-VITE_BASE_URL = https://dev.simpleworklog.de
-VITE_PROJECT_URL = https://dev.api.simpleworklog.de/api
+VITE_BASE_URL = https://cenx.lubomedia.de
+VITE_PROJECT_URL = https://api.ceanx.lubomedia.de/api
 
 Falls Lokal:
 VITE_BASE_URL = http://localhost:3000
@@ -27,7 +28,7 @@ Bei Änderung des API Pfads muss ebenfalls in der src/apis/Api.js angepasst werd
 
 ```
 baseURL: 'http://localhost:8000',
-//baseURL: 'https://dev.api.simpleworklog.de',
+//baseURL: 'https://api.ceanx.lubomedia.de',
 
 ```
 Bitt kein "/" an das Ende der URL setzen, ansonsten kommen Fehler.
