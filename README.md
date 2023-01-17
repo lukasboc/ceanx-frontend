@@ -42,7 +42,7 @@ npm run dev
 ```
 npm run build
 ```
-
+Anschließend können in `/dist` Dateien gefunden werden, die auf einem Webserver geladen werden können.
 ### Lints and fixes files
 ```
 npm run lint
