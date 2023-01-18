@@ -1,5 +1,5 @@
 <template>
-  <div class="navbar bg-base-100">
+  <div class="navbar bg-base-100 hidden md:flex">
     <div class="flex-1">
       <router-link v-if="!loggedIn" class="btn btn-ghost normal-case text-xl text-primary" :to="{ name: 'Home' }">CeanX</router-link>
       <router-link v-if="loggedIn" class="btn btn-ghost normal-case text-xl text-primary" :to="{ name: 'Dashboard' }">CeanX</router-link>

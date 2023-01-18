@@ -81,7 +81,7 @@
 
       <div class="grid grid-cols-2 sm:grid-cols-1 sm:grid-auto-rows-min justify-items-start">
 
-      <div class="stats stats-vertical sm:stats-horizontal shadow">
+      <div class="stats stats-vertical sm:stats-horizontal shadow ml-2 sm:ml-0">
         <div class="stat" v-if="returnTotalMinimumEffort() !== '0,00'">
           <div class="stat-title">Minimaler Aufwand</div>
           <div class="stat-value">{{ returnTotalMinimumEffort() }}</div>

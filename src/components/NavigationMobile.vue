@@ -47,12 +47,11 @@
             >Registrieren
             </router-link>
           </li>
-          <li>
+          <li v-if="!this.loggedIn">
             <a
                 class="rounded-xl"
                 tabindex="0"
                 v-on:click="showLogin = true"
-                v-if="!this.loggedIn"
             >
               Login
             </a>
@@ -67,12 +66,11 @@
               Kostenschätzungen
             </router-link>
           </li>
-          <li>
+          <li v-if="this.loggedIn">
             <a
                 class="rounded-xl"
                 tabindex="0"
                 @click="showAssistants = true"
-                v-if="this.loggedIn"
             >
               Assistenten öffnen
             </a>
@@ -161,12 +159,3 @@ export default {
   },
 };
 </script>
-<style>
-.divider-gray:before {
-  background-color: lightgrey;
-}
-
-.divider-gray:after {
-  background-color: lightgrey;
-}
-</style>
