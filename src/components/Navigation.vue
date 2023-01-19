@@ -3,6 +3,7 @@
     <div class="flex-1">
       <router-link v-if="!loggedIn" class="btn btn-ghost normal-case text-xl text-primary" :to="{ name: 'Home' }">CeanX</router-link>
       <router-link v-if="loggedIn" class="btn btn-ghost normal-case text-xl text-primary" :to="{ name: 'Dashboard' }">CeanX</router-link>
+      <span class="italic cursor-default text-sm">Prototyp</span>
     </div>
     <div class="flex-none">
       <ul class="menu menu-horizontal p-0">
