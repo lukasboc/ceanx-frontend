@@ -97,20 +97,10 @@ router.beforeEach((to, from, next) => {
         } else {
             next();
         }
-    } else if (to.matched.some(record => record.meta.guestOnly)) {
-        // this route requires auth, check if logged in
-        // if not, redirect to login page.
-        if (store.state.users.loggedIn) {
-            next({
-                path: "/dashboard",
-                query: { redirect: to.fullPath }
-            });
-        } else {
-            next();
-        }
     } else {
         next(); // make sure to always call next()!
     }
+    window.scrollTo(0, 0)
 });
 
 export default router;
