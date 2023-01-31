@@ -170,6 +170,12 @@ export default {
         }).then(() => {
           this.$emit('refreshTroiConnections')
           this.$emit('close')
+        }).catch((error) => {
+          if(error.response.status !== 201){
+            this.showLoading = false
+            this.$store.commit("troiConnections/setTroiConnectionMessage", '')
+            this.$store.commit("troiConnections/setTroiErrorMessage", 'Die Verbindung konnte nicht gespeichert werden.')
+          }
         });
       } else {
         console.log('fehlerhafte eingabe.')

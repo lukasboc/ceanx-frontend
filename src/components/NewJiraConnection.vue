@@ -171,6 +171,12 @@ export default {
         }).then(() => {
           this.$emit('refreshJiraConnections')
           this.$emit('close')
+        }).catch((error) => {
+          if(error.response.status !== 201){
+            this.showLoading = false
+            this.$store.commit("jiraConnections/setJiraConnectionMessage", '')
+            this.$store.commit("jiraConnections/setJiraErrorMessage", 'Die Verbindung konnte nicht gespeichert werden.')
+          }
         });
       } else {
         console.log('fehlerhafte eingabe.')
