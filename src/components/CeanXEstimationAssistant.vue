@@ -17,48 +17,48 @@
       </div>
     <div v-if="!emptyInputs" class="overflow-x-auto mb-1 mt-1 py-1 pl-1">
       <div class="stats shadow mx-auto">
-        <div class="stat place-items-center" v-if="this.minimumMax !== null">
+        <div class="stat place-items-center" v-if="this.minimum !== null">
           <div class="stat-title">Minimum</div>
-          <div class="stat-value">{{ (parseFloat(this.minimumMax).toFixed(2)).toString().replaceAll('.',',') }}</div>
+          <div class="stat-value">{{ (parseFloat(this.minimum).toFixed(2)).toString().replaceAll('.',',') }}</div>
           <div class="stat-desc">Minimum Schätzung</div>
         </div>
-        <div class="stat place-items-center" v-if="this.averageMax !== null">
+        <div class="stat place-items-center" v-if="this.average !== null">
           <div class="stat-title">Durchschnitt</div>
-          <div class="stat-value">{{ (parseFloat(this.averageMax).toFixed(2)).toString().replaceAll('.',',') }}</div>
+          <div class="stat-value">{{ (parseFloat(this.average).toFixed(2)).toString().replaceAll('.',',') }}</div>
           <div class="stat-desc">Minimum Schätzung</div>
         </div>
-        <div class="stat place-items-center" v-if="this.medianMax !== null">
+        <div class="stat place-items-center" v-if="this.median !== null">
           <div class="stat-title">Median</div>
-          <div class="stat-value">{{ (parseFloat(this.medianMax).toFixed(2)).toString().replaceAll('.',',') }}</div>
+          <div class="stat-value">{{ (parseFloat(this.median).toFixed(2)).toString().replaceAll('.',',') }}</div>
           <div class="stat-desc">Minimum Schätzung</div>
         </div>
-        <div class="stat place-items-center" v-if="this.maximumMax !== null">
+        <div class="stat place-items-center" v-if="this.maximum !== null">
           <div class="stat-title">Maximum</div>
-          <div class="stat-value">{{ (parseFloat(this.maximumMax).toFixed(2)).toString().replaceAll('.',',') }}</div>
+          <div class="stat-value">{{ (parseFloat(this.maximum).toFixed(2)).toString().replaceAll('.',',') }}</div>
           <div class="stat-desc">Minimum Schätzung</div>
         </div>
       </div>
     </div>
     <div v-if="!emptyInputs" class="overflow-x-auto mb-1 mt-1 py-1 pl-1">
       <div class="stats shadow mx-auto">
-        <div class="stat place-items-center" v-if="this.minimum !== null">
+        <div class="stat place-items-center" v-if="this.minimumMax !== null">
           <div class="stat-title">Minimum</div>
-          <div class="stat-value">{{ (parseFloat(this.minimum).toFixed(2)).toString().replaceAll('.',',') }}</div>
+          <div class="stat-value">{{ (parseFloat(this.minimumMax).toFixed(2)).toString().replaceAll('.',',') }}</div>
           <div class="stat-desc">Maximum Schätzung</div>
         </div>
-        <div class="stat place-items-center" v-if="this.average !== null">
+        <div class="stat place-items-center" v-if="this.averageMax !== null">
           <div class="stat-title">Durchschnitt</div>
-          <div class="stat-value">{{ (parseFloat(this.average).toFixed(2)).toString().replaceAll('.',',') }}</div>
+          <div class="stat-value">{{ (parseFloat(this.averageMax).toFixed(2)).toString().replaceAll('.',',') }}</div>
           <div class="stat-desc">Maximum Schätzung</div>
         </div>
-        <div class="stat place-items-center" v-if="this.median !== null">
+        <div class="stat place-items-center" v-if="this.medianMax !== null">
           <div class="stat-title">Median</div>
-          <div class="stat-value">{{ (parseFloat(this.median).toFixed(2)).toString().replaceAll('.',',') }}</div>
+          <div class="stat-value">{{ (parseFloat(this.medianMax).toFixed(2)).toString().replaceAll('.',',') }}</div>
           <div class="stat-desc">Maximum Schätzung</div>
         </div>
-        <div class="stat place-items-center" v-if="this.maximum !== null">
+        <div class="stat place-items-center" v-if="this.maximumMax !== null">
           <div class="stat-title">Maximum</div>
-          <div class="stat-value">{{ (parseFloat(this.maximum).toFixed(2)).toString().replaceAll('.',',') }}</div>
+          <div class="stat-value">{{ (parseFloat(this.maximumMax).toFixed(2)).toString().replaceAll('.',',') }}</div>
           <div class="stat-desc">Maximum Schätzung</div>
         </div>
       </div>
