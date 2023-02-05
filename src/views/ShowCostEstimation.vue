@@ -42,7 +42,7 @@
             </thead>
             <tbody>
             <tr class="hover" v-for="position in this.positions">
-              <th v-if="position.component === group">{{ position.id }}</th>
+              <td v-if="position.component === group">{{ position.id }}</td>
               <td v-if="position.component === group">{{ position.title }}</td>
               <td v-if="position.component === group">{{ position.description }}</td>
               <td v-if="position.component === group">{{ position.minimum_estimate.replaceAll('.', ',') }}</td>
@@ -53,7 +53,7 @@
               <td v-if="position.component === group">{{ position.comment }}</td>
             </tr>
             <tr class="hover">
-              <th>Gesamt</th>
+              <td>Gesamt</td>
               <td></td>
               <td></td>
               <td>{{ returnMinimumSumForComponent(group) }}</td>

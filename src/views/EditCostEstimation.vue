@@ -115,9 +115,9 @@
             </thead>
             <tbody>
             <tr class="hover" v-for="position in this.positions">
-              <th v-if="position.component === group"><button @click="this.tmpPosId = position.id; this.showDeletePositionModal = true" class="btn gap-2 btn-error btn-link text-error btn-xs">
+              <td v-if="position.component === group"><button @click="this.tmpPosId = position.id; this.showDeletePositionModal = true" class="btn gap-2 btn-error btn-link text-error btn-xs">
                 <i class="far fa-trash-alt"></i>
-              </button> {{ position.id }}</th>
+              </button> {{ position.id }}</td>
               <td v-if="position.component === group"><button @click="this.tmpCostEstimationId = position.id; this.tmpStep = 0; this.showEditPositionModal = true" class="btn gap-2 btn-link btn-xs">
                 <i class="far fa-pencil"></i>
               </button> {{ position.title }}</td>
@@ -138,7 +138,7 @@
               </button> {{ position.comment }}</td>
             </tr>
             <tr class="hover">
-              <th>Gesamt</th>
+              <td>Gesamt</td>
               <td></td>
               <td></td>
               <td>{{ returnMinimumSumForComponent(group) }}</td>
