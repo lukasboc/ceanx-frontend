@@ -101,7 +101,7 @@
       <div class="prose prose-gray max-w-none" v-for="group in groups" :key="group">
         <h2 class="mb-0 mt-4 md:mt-0">{{ group }}</h2>
         <div class="overflow-x-auto">
-          <table class="table mb-1">
+          <table class="not-prose table mb-1">
             <thead>
             <tr>
               <th>ID</th>
