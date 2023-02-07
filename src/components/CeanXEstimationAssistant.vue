@@ -151,10 +151,10 @@ export default {
         this.result = this.searchResult;
         return;
       }
-      this.emptyInputs = false;
       this.$store.dispatch("costEstimationPositions/getSearchResult", {
           text: this.searchString,
         }).then(() => {
+          this.emptyInputs = false;
           this.result = this.searchResult;
           this.returnAverage()
           this.getMaximum()

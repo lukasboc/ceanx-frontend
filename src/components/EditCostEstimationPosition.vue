@@ -27,7 +27,7 @@
         </div>
         <div class="form-control w-full">
           <label class="label" for="description">
-            <span class="label-text">Beschreibung</span>
+            <span class="label-text">Beschreibung (optional)</span>
           </label>
           <textarea @keydown.tab="step++" v-model="description" id="description" placeholder="Beschreibung" class="textarea textarea-bordered textarea-primary w-full "></textarea>
         </div>

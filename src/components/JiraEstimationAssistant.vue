@@ -14,7 +14,7 @@
       <div class="form-control mb-1 col-span-full sm:col-span-3">
         <div class="dropdown dropdown-end col-span-3" id="compDropdown">
           <div tabindex="0" class="lg:ml-1 btn btn-outline w-full">Komponenten<i class="ml-2 fas fa-chevron-down"></i></div>
-          <ul tabindex="0" class="p-2 shadow menu dropdown-content bg-base-100 rounded-box w-52">
+          <ul tabindex="0" class="p-2 shadow menu dropdown-content bg-base-100 rounded-box w-52 overflow-y-auto max-h-[300px]">
             <li v-for="component in components" :key="component.id">
               <label class="label cursor-pointer">
               <span class="label-text">{{ component.title }}</span>
@@ -98,7 +98,6 @@ import { mapState } from "vuex";
 
 export default {
   name: "JiraEstimationAssistant",
-  components: {},
   props: {
     title: String,
   },
@@ -120,12 +119,12 @@ export default {
     jiraResult: (state) => state.jiraConnections.searchResult,
   }),
   created() {
-    if(this.title !== '' && this.title !== null){
-    this.searchString = this.title;
-    this.searchJiraWorklogs();
     this.$store.dispatch("components/getComponents").then(() => {
       this.components = this.allComponents
     })
+    if(this.title !== '' && this.title !== null){
+    this.searchString = this.title;
+    this.searchJiraWorklogs();
     }
   },
   methods: {
@@ -136,12 +135,12 @@ export default {
         this.result = this.jiraResult;
         return;
       }
-      this.emptyInputs = false;
       this.$store.dispatch("jiraConnections/getJiraResult", {
           text: this.searchString,
           components: this.selectedComponents,
         }).then(() => {
-          this.result = this.jiraResult;
+        this.emptyInputs = false;
+        this.result = this.jiraResult;
           this.returnAverage()
           this.getMaximum()
           this.getMinimum()

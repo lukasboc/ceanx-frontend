@@ -137,7 +137,7 @@ export default {
         this.filteredCostEstimations.forEach(function (ce) {
           if (
               ce.title.toLowerCase().includes(searchString) ||
-              ce.description.toLowerCase().includes(searchString)
+              ce.description !== null && ce.description.toLowerCase().includes(searchString)
           )
             results.push(ce);
         });

@@ -66,7 +66,7 @@
     <div class="alert alert-info shadow-lg mt-2" v-else>
       <div>
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="stroke-current flex-shrink-0 w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-        <span>Bitte gib ein Suchwort ein um eine Suche zu starten.</span>
+        <span>Bitte gib ein Suchwort ein, um eine Suche zu starten.</span>
       </div>
     </div>
     <div class="collapse rounded-box w-full">
@@ -154,10 +154,10 @@ export default {
         this.result = this.troiResult;
         return;
       }
-      this.emptyInputs = false;
       this.$store.dispatch("troiConnections/getTroiResult", {
           text: this.searchString
         }).then(() => {
+          this.emptyInputs = false;
           this.result = this.troiResult;
           this.returnAverage()
           this.getMaximum()

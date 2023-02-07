@@ -175,7 +175,8 @@
               <span>Achtung: das System ist offen für neue Registrierungen. Bitte beachte, dass jeder neue Nutzer alles sehen kann, was du auch siehst.</span>
             </div>
           </span>
-          <p class="my-4">Sofern du aktuell keine neuen Nutzer erwartest, schalte die Registrierung besser aus:</p>
+          <p v-if="registerAllowed" class="my-4">Sofern du aktuell keine neuen Nutzer erwartest, schalte die Registrierung besser aus:</p>
+          <p v-if="!registerAllowed" class="my-4">Falls du neue Nutzer erwartest, kannst du die Registrierungsfunktion hier einschalten:</p>
           <button v-if="registerAllowed" class="btn btn-error btn-outline " @click="toggleRegisterAllowed">Registrierungen verhindern</button>
           <button v-if="!registerAllowed" class="btn btn-success btn-outline " @click="toggleRegisterAllowed">Registrierungen erlauben</button>
         </div>

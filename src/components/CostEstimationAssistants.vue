@@ -16,7 +16,7 @@
             placeholder="Mega Menu"
         />
       </div>
-        <div class="card bg-[#F9FCFF] shadow-lg w-full max-w-none mt-2">
+        <div class="card bg-[#F9FCFF] shadow-lg w-full max-w-none mt-2 min-h-[350px]">
           <div class="w-full tabs">
             <a class="tab tab-bordered" @click="tab = 0" :class="{ 'tab-active': tab === 0 }">Jira Aufwände</a>
             <a class="tab tab-bordered" @click="tab = 1" :class="{ 'tab-active': tab === 1 }">Troi Kalkulationspositionen</a>
@@ -72,14 +72,14 @@ export default {
   },
   data() {
     return {
-      component:this.component,
-      costEstimationId:this.costEstimationId,
+      component: this.component,
+      costEstimationId: this.costEstimationId,
       tab: 0,
       searchString: '',
     }
   },
   created() {
-
+    this.$store.dispatch("components/getComponents")
   },
   methods: {
     updateChildren(){
