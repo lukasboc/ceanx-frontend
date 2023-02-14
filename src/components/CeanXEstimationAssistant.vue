@@ -9,6 +9,7 @@
           v-model="searchString"
           type="text"
           placeholder="Mega Menu"
+          @keydown.enter="this.searchCeanXPositions()"
       />
     </div>
       <div class="form-control mb-1 col-span-full sm:col-span-3">
@@ -16,50 +17,51 @@
       </div>
       </div>
     <div v-if="!emptyInputs" class="overflow-x-auto mb-1 mt-1 py-1 pl-1">
+
       <div class="stats shadow mx-auto">
         <div class="stat place-items-center" v-if="this.minimum !== null">
-          <div class="stat-title">Minimum</div>
+          <div class="stat-title">Minimum Schätzung</div>
           <div class="stat-value">{{ (parseFloat(this.minimum).toFixed(2)).toString().replaceAll('.',',') }}</div>
-          <div class="stat-desc">Minimum Schätzung</div>
+          <div class="stat-desc">Minimum</div>
         </div>
         <div class="stat place-items-center" v-if="this.average !== null">
-          <div class="stat-title">Durchschnitt</div>
+          <div class="stat-title">Minimum Schätzung</div>
           <div class="stat-value">{{ (parseFloat(this.average).toFixed(2)).toString().replaceAll('.',',') }}</div>
-          <div class="stat-desc">Minimum Schätzung</div>
+          <div class="stat-desc">Durchschnitt</div>
         </div>
         <div class="stat place-items-center" v-if="this.median !== null">
-          <div class="stat-title">Median</div>
+          <div class="stat-title">Minimum Schätzung</div>
           <div class="stat-value">{{ (parseFloat(this.median).toFixed(2)).toString().replaceAll('.',',') }}</div>
-          <div class="stat-desc">Minimum Schätzung</div>
+          <div class="stat-desc">Median</div>
         </div>
         <div class="stat place-items-center" v-if="this.maximum !== null">
-          <div class="stat-title">Maximum</div>
+          <div class="stat-title">Minimum Schätzung</div>
           <div class="stat-value">{{ (parseFloat(this.maximum).toFixed(2)).toString().replaceAll('.',',') }}</div>
-          <div class="stat-desc">Minimum Schätzung</div>
+          <div class="stat-desc">Maximum</div>
         </div>
       </div>
     </div>
     <div v-if="!emptyInputs" class="overflow-x-auto mb-1 mt-1 py-1 pl-1">
       <div class="stats shadow mx-auto">
         <div class="stat place-items-center" v-if="this.minimumMax !== null">
-          <div class="stat-title">Minimum</div>
+          <div class="stat-title">Maximum Schätzung</div>
           <div class="stat-value">{{ (parseFloat(this.minimumMax).toFixed(2)).toString().replaceAll('.',',') }}</div>
-          <div class="stat-desc">Maximum Schätzung</div>
+          <div class="stat-desc">Minimum</div>
         </div>
         <div class="stat place-items-center" v-if="this.averageMax !== null">
-          <div class="stat-title">Durchschnitt</div>
+          <div class="stat-title">Maximum Schätzung</div>
           <div class="stat-value">{{ (parseFloat(this.averageMax).toFixed(2)).toString().replaceAll('.',',') }}</div>
-          <div class="stat-desc">Maximum Schätzung</div>
+          <div class="stat-desc">Durchschnitt</div>
         </div>
         <div class="stat place-items-center" v-if="this.medianMax !== null">
-          <div class="stat-title">Median</div>
+          <div class="stat-title">Maximum Schätzung</div>
           <div class="stat-value">{{ (parseFloat(this.medianMax).toFixed(2)).toString().replaceAll('.',',') }}</div>
-          <div class="stat-desc">Maximum Schätzung</div>
+          <div class="stat-desc">Median</div>
         </div>
         <div class="stat place-items-center" v-if="this.maximumMax !== null">
-          <div class="stat-title">Maximum</div>
+          <div class="stat-title">Maximum Schätzung</div>
           <div class="stat-value">{{ (parseFloat(this.maximumMax).toFixed(2)).toString().replaceAll('.',',') }}</div>
-          <div class="stat-desc">Maximum Schätzung</div>
+          <div class="stat-desc">Maximum</div>
         </div>
       </div>
     </div>
@@ -77,7 +79,7 @@
         </p>
       </div>
       <div class="collapse-content">
-        <div class="overflow-x-auto overflow-y-auto max-h-44">
+        <div class="overflow-x-auto overflow-y-auto max-h-80">
           <table class="table mb-1">
             <thead>
             <tr>

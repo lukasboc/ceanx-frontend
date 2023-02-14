@@ -9,6 +9,7 @@
           v-model="searchString"
           type="text"
           placeholder="Mega Menu"
+          @keydown.enter="this.searchTroiCalculationPositions()"
       />
     </div>
       <div class="form-control mb-1 col-span-full sm:col-span-3">
@@ -77,7 +78,7 @@
         </p>
       </div>
       <div class="collapse-content">
-        <div class="overflow-x-auto overflow-y-auto max-h-44">
+        <div class="overflow-x-auto overflow-y-auto max-h-80">
           <table class="table mb-1">
             <thead>
             <tr>

@@ -9,6 +9,7 @@
           v-model="searchString"
           type="text"
           placeholder="Mega Menu"
+          @keydown.enter="this.searchJiraWorklogs()"
       />
     </div>
       <div class="form-control mb-1 col-span-full sm:col-span-3">
@@ -62,7 +63,7 @@
         </p>
       </div>
       <div class="collapse-content">
-        <div class="overflow-x-auto overflow-y-auto max-h-52">
+        <div class="overflow-x-auto overflow-y-auto max-h-80">
           <table class="table mb-1">
             <thead>
             <tr>
