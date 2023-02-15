@@ -85,6 +85,11 @@ const actions = {
         const res = await troiConnectionsApi.getTroiResult(searchParams);
         switch (res.status) {
             case 200:
+                if(res.data[0] === 401){
+                    commit('setTroiResult', '');
+                    console.error('Authentication not successfull.')
+                    throw Error("badRequest");
+                }
                 commit('setTroiResult', res.data);
                 break;
             case 201:
