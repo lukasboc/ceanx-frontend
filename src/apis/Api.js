@@ -3,7 +3,7 @@ import Cookie from "js-cookie";
 
 let Api = axios.create({
     //baseURL: 'http://localhost:8000',
-    baseURL: 'https://backend.ceanx.lubomedia.de',
+    baseURL: import.meta.env.VITE_BACKEND_BASE,
     headers: {
         "Content-Type": "application/json",
         'X-CSRF-TOKEN'    : Cookie.get("XSRF-TOKEN"),

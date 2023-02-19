@@ -22,7 +22,11 @@ const routes = [
         path: "/register",
         name: "Register",
         component: Register,
-        meta: { guestOnly: true }
+    },
+    {
+        path: "/login",
+        name: "Login",
+        component: Home,
     },
     {
         path: "/dashboard",

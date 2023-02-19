@@ -15,22 +15,16 @@ This template should help get you started developing with Vue 3 in Vite. The tem
 ### Customize BASE_URL
 Die Base URL für das Backend und das Frontend können in der .env gesetzt werden.
 ```
-VITE_BASE_URL = https://cenx.lubomedia.de
-VITE_PROJECT_URL = https://api.ceanx.lubomedia.de/api
+#VITE_BASE_URL = https://ceanx.lubomedia.de
+#VITE_PROJECT_URL = https://api.ceanx.lubomedia.de/api
+#BACKEND_BASE_URL=https://api.ceanx.lubomedia.de
 
-Falls Lokal:
-VITE_BASE_URL = http://localhost:3000
-VITE_PROJECT_URL = http://localhost:8000/api
+VITE_BASE_URL=http://localhost:3000
+VITE_PROJECT_URL=http://localhost:8000/api
+BACKEND_BASE_URL=http://localhost:8000
 ```
-Nach der anpassung muss, `npm run dev` nochmal ausgeführt werden.
+Nach der Anpassung muss `npm run dev` nochmal ausgeführt werden.
 
-Bei Änderung des API Pfads muss ebenfalls in der src/apis/Api.js angepasst werden:
-
-```
-baseURL: 'http://localhost:8000',
-//baseURL: 'https://api.ceanx.lubomedia.de',
-
-```
 Bitt kein "/" an das Ende der URL setzen, ansonsten kommen Fehler.
 
 ### Compiles and hot-reloads for development
@@ -43,10 +37,15 @@ npm run dev
 npm run build
 ```
 Anschließend können in `/dist` Dateien gefunden werden, die auf einem Webserver geladen werden können.
-### Lints and fixes files
-```
-npm run lint
-```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+Ggf. ist für das Prod-Deployment eine .htaccess mit folgenden Inhalten nötig:
+```
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteBase /
+RewriteRule ^index\.html$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /index.html [L]
+</IfModule>
+```

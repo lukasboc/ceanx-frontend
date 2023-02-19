@@ -86,7 +86,7 @@ const actions = {
         switch (res.status) {
             case 200:
                 if(res.data[0] === 401){
-                    commit('setTroiResult', '');
+                    commit('setTroiResult', []);
                     console.error('Authentication not successfull.')
                     throw Error("badRequest");
                 }

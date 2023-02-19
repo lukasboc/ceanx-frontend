@@ -169,6 +169,7 @@ export default {
     returnAverage(){
       if(this.getMinimumEstimates().length === 0){
         this.average = 0;
+        this.averageMax = 0;
         return;
       }
       let sum = 0;
@@ -177,10 +178,6 @@ export default {
       }
       this.average = sum / this.result.length
       //max estimates
-      if(this.getMaximumEstimates().length === 0){
-        this.averageMax = 0;
-        return;
-      }
       let sum2 = 0;
       for (let resultEntry in this.result) {
         sum2 += parseFloat(this.result[resultEntry].maximum_estimate)
@@ -196,32 +193,25 @@ export default {
     getMinimum(){
       if(this.getMinimumEstimates().length === 0){
         this.minimum = 0;
-        return;
-      }
-      this.minimum = Math.min(...this.getMinimumEstimates());
-      //max estimates
-      if(this.getMaximumEstimates().length === 0){
         this.minimumMax = 0;
         return;
       }
+      this.minimum = Math.min(...this.getMinimumEstimates());
       this.minimumMax = Math.min(...this.getMaximumEstimates());
       },
     getMaximum(){
       if(this.getMinimumEstimates().length === 0){
         this.maximum = 0;
-        return;
-      }
-      this.maximum = Math.max(...this.getMinimumEstimates());
-      //max estimates
-      if(this.getMaximumEstimates().length === 0){
         this.maximumMax = 0;
         return;
       }
+      this.maximum = Math.max(...this.getMinimumEstimates());
       this.maximumMax = Math.max(...this.getMaximumEstimates());
     },
     getMedian() {
       if(this.getMinimumEstimates().length === 0){
         this.median = 0;
+        this.medianMax = 0;
         return;
       }
       let concat = this.getMinimumEstimates().sort(
@@ -237,10 +227,6 @@ export default {
             + concat[(length / 2) - 1]) / 2;
       }
       //Max Estimates
-      if(this.getMaximumEstimates().length === 0){
-        this.medianMax = 0;
-        return;
-      }
       let concat2 = this.getMaximumEstimates().sort(
           function (a, b) { return a - b });
 
