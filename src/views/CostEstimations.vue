@@ -191,9 +191,8 @@ export default {
       this.sortVariable = "author";
       this.ascending = ascending;
       this.filteredCostEstimations.sort((a, b) => {
-        if (ascending)
-          return -(new Date(b.user.name) - new Date(a.user.name));
-        return new Date(b.user.name) - new Date(a.user.name);
+        if (ascending) return a.user.name.localeCompare(b.user.name);
+        return -a.user.name.localeCompare(b.user.name);
       });
     },
   }
