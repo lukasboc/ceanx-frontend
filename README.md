@@ -19,6 +19,7 @@ Dies ist das Repository des CeanX Frontends, welches auf [Vue 3](https://vuejs.o
 
 - .env aus `.env.example` erstellen
 - Packages mit `npm install` installieren
+- Rechtstexte in  `src/views/LegalNotice.vue` und `src/views/PrivacyPolicy.vue` einfügen
 - Kompilieren und minifizieren durch  `npm run build`
 
 Anschließend können in `/dist` Dateien gefunden werden, die auf einem Webserver geladen werden können.
